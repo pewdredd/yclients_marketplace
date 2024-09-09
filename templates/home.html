@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+  </head>
+  <body>
+    <h1>Главная страница</h1>
+    {% if robot_count is not none %}
+      <p>Количество моих роботов: {{ robot_count }}</p>
+    {% else %}
+      <p>Пожалуйста, войдите в систему, чтобы увидеть количество ваших роботов.</p>
+    {% endif %}
+    <a href="{{ url_for('register') }}">Регистрация</a> | <a href="{{ url_for('login') }}">Вход</a> | <a href="{{ url_for('logout') }}">Выход</a> |  <a href="{{ url_for('payment') }}">Оплата</a> | <a href="{{ url_for('refund') }}">Возврат</a>
+  </body>
+</html>
